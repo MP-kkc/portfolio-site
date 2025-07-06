@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manasi Parthasarathy | Biomedical Innovation & Strategy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony (Warm neutrals with a muted teal/slate blue accent) -->
+    <!-- Application Structure Plan: The SPA is structured into four thematic pillars: 1) Clinical Innovation, 2) Commercial Strategy, 3) AI & Technical Expertise, and 4) Foundation. This thematic approach, rather than a chronological one, allows users (recruiters) to quickly navigate to the area most relevant to their needs, telling a clearer story of capability. Interactions like clickable cards and a process flow diagram are used to present detailed information on demand, preventing initial overload and encouraging exploration. -->
+    <!-- Visualization & Content Choices: 1. Experience/Projects: Goal=Inform/Organize, Method=Interactive HTML/CSS Cards, Interaction=Click to expand/reveal details, Justification=Presents a high-level overview first, with details on-demand for clarity, Method=JS + Tailwind. 2. Skills: Goal=Compare/Inform, Method=Horizontal Bar Chart, Interaction=Hover for tooltips, Justification=Visually represents key technical competencies for quick assessment, Library=Chart.js. 3. Innovation Process: Goal=Show Change/Process, Method=HTML/CSS flow diagram, Interaction=Click steps for details, Justification=Illustrates the end-to-end innovation process experience clearly. CONFIRMED: No SVG or Mermaid used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFDFB;
+            color: #383838;
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #0d9488; /* teal-600 */
+            border-bottom-color: #0d9488;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .details-content {
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .details-content.show {
+            display: block;
+            max-height: 1000px;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-teal-700">Manasi Parthasarathy</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#summary" class="nav-link font-medium pb-1">Summary</a>
+                <a href="#experience" class="nav-link font-medium pb-1">Experience</a>
+                <a href="#projects" class="nav-link font-medium pb-1">Projects</a>
+                <a href="#research" class="nav-link font-medium pb-1">Research</a>
+                <a href="#education" class="nav-link font-medium pb-1">Education</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                     <span class="text-2xl">&#9776;</span>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#summary" class="block py-2 px-4 text-sm hover:bg-teal-50">Summary</a>
+            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-teal-50">Experience</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-teal-50">Projects</a>
+            <a href="#research" class="block py-2 px-4 text-sm hover:bg-teal-50">Research</a>
+            <a href="#education" class="block py-2 px-4 text-sm hover:bg-teal-50">Education</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        
+        <section id="summary" class="text-center min-h-[60vh] flex flex-col justify-center items-center section-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">Manasi Parthasarathy</h1>
+            <p class="text-xl md:text-2xl text-teal-700 mb-6">Biomedical Innovation, Commercial Strategy, and Health Technology</p>
+            <div class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">
+                <p>
+                    A Master of Biomedical Innovation student with a foundation in clinical needs-finding, AI applications in healthcare, and venture creation. Proven ability to translate complex clinical challenges into scalable, technology-driven solutions. Experienced in market strategy, due diligence, and product development for early-stage health-tech ventures.
+                </p>
+            </div>
+            <div class="flex justify-center space-x-6 text-2xl text-gray-500">
+                <a href="mailto:manasip.pro@gmail.com" class="hover:text-teal-600 transition-colors">✉️</a>
+                <a href="https://www.linkedin.com/in/manasiparthasarathy" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">
+                    <span class="font-bold">in</span>
+                </a>
+                <a href="tel:+1-647-879-0805" class="hover:text-teal-600 transition-colors">📞</a>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Professional Experience</h2>
+             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">This section highlights my hands-on experience in the health-tech industry, spanning commercial strategy, venture analysis, and product development. The interactive cards below detail my key contributions and achievements in each role, demonstrating my ability to drive growth and innovation in early-stage startups. Click on any card to explore the specifics of my impact.</p>
+            <div id="experience-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Key Projects & Technical Skills</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">My project work demonstrates the practical application of my academic knowledge and technical skills. This section features a visual breakdown of my key technical competencies and provides an overview of my most impactful AI and industry-related projects. Explore the chart to see my skill distribution and click the cards to learn about my project-based achievements.</p>
+            <div class="chart-container mb-16">
+                <canvas id="skillsChart"></canvas>
+            </div>
+            <div id="projects-container" class="grid md:grid-cols-2 gap-8">
+            </div>
+        </section>
+        
+        <section id="research" class="py-16 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Thesis Research: AI-Driven Lab-on-a-Chip</h2>
+             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">My thesis research represents a deep dive into the intersection of biomedical engineering, microfluidics, and artificial intelligence. The goal was to significantly enhance the accuracy of cytotoxicity detection for cancer immunotherapy research. The flow diagram below illustrates the comprehensive, multi-stage process I led, from initial design and fabrication to advanced AI-driven data analysis.</p>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-center mb-8">Project Workflow: Advancing Cytotoxicity Detection</h3>
+                <div class="relative">
+                    <div class="border-l-2 border-teal-200 absolute h-full top-0 left-4"></div>
+                    <div class="space-y-12">
+                        <div class="flex items-start">
+                            <div class="bg-teal-500 rounded-full h-8 w-8 text-white flex items-center justify-center font-bold z-10">1</div>
+                            <div class="ml-6">
+                                <h4 class="font-bold text-lg text-teal-700">Design & Fabrication</h4>
+                                <p class="text-gray-600 mt-1">Designed and fabricated 5+ custom 3D-printed microfluidic chips and 2 novel lab-on-chip platforms in Fusion 360 to assess real-time cytotoxic responses of NK immune cells.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start">
+                            <div class="bg-teal-500 rounded-full h-8 w-8 text-white flex items-center justify-center font-bold z-10">2</div>
+                            <div class="ml-6">
+                                <h4 class="font-bold text-lg text-teal-700">Experimentation</h4>
+                                <p class="text-gray-600 mt-1">Conducted droplet-based microfluidic experiments and NK cell culture assays across 10+ in vitro tumor models, generating over 5,000 images for analysis.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start">
+                            <div class="bg-teal-500 rounded-full h-8 w-8 text-white flex items-center justify-center font-bold z-10">3</div>
+                            <div class="ml-6">
+                                <h4 class="font-bold text-lg text-teal-700">AI Model Adaptation</h4>
+                                <p class="text-gray-600 mt-1">Adapted and tuned a Detectron2 AI model for automated cytotoxicity event detection, manually labeling 200+ immune-tumor interaction frames to create a high-quality training dataset.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start">
+                            <div class="bg-teal-500 rounded-full h-8 w-8 text-white flex items-center justify-center font-bold z-10">4</div>
+                            <div class="ml-6">
+                                <h4 class="font-bold text-lg text-teal-700">Data Analysis & Optimization</h4>
+                                <p class="text-gray-600 mt-1">Built clean datasets and improved data quality from 5,000+ images by optimizing preprocessing and augmentation workflows, leading to robust model performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education" class="py-16 section-fade-in">
+             <h2 class="text-3xl font-bold text-center mb-12">Education & Leadership</h2>
+             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">This section outlines my academic foundation and leadership experiences, which have cultivated my analytical abilities and collaborative skills. My education provided the theoretical and practical knowledge base, while leadership roles allowed me to apply these skills in real-world team environments.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">Education</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-bold text-lg text-teal-700">Master of Biomedical Innovation (MBI)</p>
+                            <p class="text-gray-700">McMaster University, Hamilton, ON</p>
+                            <p class="text-sm text-gray-500">Sept 2024 - Aug 2025</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-600">
+                                <li>Entrance Scholarship Recipient; GPA: 4.0</li>
+                                <li>Training from clinical needs-finding to venture creation.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg text-teal-700">Honors Bachelor of Science (HBSc)</p>
+                            <p class="text-gray-700">McMaster University, Hamilton, ON</p>
+                            <p class="text-sm text-gray-500">Sept 2019 - Jun 2024</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-600">
+                                <li>Major in Biology, Minor in Psychology</li>
+                                <li>Entrance Scholarship; Dean's List; GPA: 3.9</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">Leadership & Achievements</h3>
+                    <div class="space-y-4 text-gray-600">
+                        <p><span class="font-semibold text-teal-800">Publication:</span> Authored published research on high-fiber diet effects on gut microbiome (URNCST, Feb 2025).</p>
+                        <p><span class="font-semibold text-teal-800">Case Competition:</span> Awarded 2nd Prize for pitching a novel HIV therapeutic business proposal.</p>
+                        <p><span class="font-semibold text-teal-800">Director, Fearless Minds:</span> Expanded mental health initiative to 11,000+ members and supported Sick Kids' Hospital.</p>
+                        <p><span class="font-semibold text-teal-800">Executive, Multipolar Marauder:</span> Led political rights discussions and increased social media engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+            <p>&copy; 2025 Manasi Parthasarathy. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Interactive resume created to showcase skills and experience.</p>
+        </div>
+    </footer>
+
+    <script>
+        const experienceData = [
+            {
+                title: "Commercialization & Strategy Intern",
+                company: "Digital Medical Experts",
+                date: "Feb 2025 - Present",
+                summary: "Venture-backed AI Neurotech Diagnostics",
+                details: [
+                    "Spearheaded market sizing (TAM/SAM/SOM) and opportunity analysis, identifying 5+ high-priority segments.",
+                    "Provided strategic resources to founders, including a curated database of 1,300+ investors.",
+                    "Evaluated 3+ financial models and developed regulatory strategies across FDA and Health Canada.",
+                    "Led 30+ stakeholder interviews to validate needs and inform MVP feature prioritization."
+                ]
+            },
+            {
+                title: "Venture Fellow",
+                company: "Halo Health",
+                date: "Feb 2025 - Present",
+                summary: "Angel Investment Group",
+                details: [
+                    "Conducted due diligence on 10+ early-stage healthtech startups.",
+                    "Assessed clinical relevance, regulatory strategy, and commercialization potential.",
+                    "Collaborated with 15+ physicians, operators, and investors to evaluate startup teams and product-market fit.",
+                    "Contributed to investment committee discussions, sharing diligence insights."
+                ]
+            },
+            {
+                title: "Product Strategy & Prototyping Intern",
+                company: "Morphace",
+                date: "March 2025 - Present",
+                summary: "AI-powered skincare wearables",
+                details: [
+                    "Identified 5+ new customer segments and market opportunities, including a high-impact women's health segment.",
+                    "Contributed to product design and AI opportunity assessment across 3+ feature areas.",
+                    "Informed 2+ proposed clinical trial pathways.",
+                    "Developed regulatory strategies for FDA and Health Canada, including pathway analysis."
+                ]
+            },
+            {
+                title: "Commercial Strategy Consultant",
+                company: "Razroze Therapeutics",
+                date: "Jan 2025 - April 2025",
+                summary: "AI personalized mental health support",
+                details: [
+                    "Co-developed a commercialization plan for an AI chatbot, leveraging insights from 2,000+ users.",
+                    "Outlined 3+ strategic milestones across product, ethical AI deployment, and commercialization readiness.",
+                    "Mapped 3+ target user segments with adoption pathways."
+                ]
+            },
+            {
+                title: "Market Research Specialist",
+                company: "Llettonna",
+                date: "Feb 2019 - Aug 2020",
+                summary: "Centralized health database",
+                details: [
+                    "Conducted detailed market research and MARS-based assessments on 20+ eHealth apps.",
+                    "Applied PESTLE and SWOT analyses to evaluate market positioning and competitive landscape.",
+                    "Translated 10+ market reports into insights that shaped strategic planning."
+                ]
+            },
+        ];
+
+        const projectData = [
+            {
+                title: "AI Project: Generative AI for Needs Finding",
+                summary: "Conducted comprehensive analysis of leading generative AI models for problem exploration in biomedical innovation.",
+            },
+            {
+                title: "AI Project: Neural Network Tuning",
+                summary: "Designed and trained a classification model in TensorFlow Playground, experimenting with hyperparameters and applying regularization.",
+            },
+            {
+                title: "Industry Project: Remote Heart Failure Monitoring",
+                summary: "Led early-stage development of an impedance-based remote heart failure monitoring solution, translating clinical observations into product concept.",
+            },
+            {
+                title: "Industry Project: Endometriosis Misdiagnosis Analysis",
+                summary: "Assessed global burden of endometriosis misdiagnosis, identifying 8+ unmet needs and proposing 5+ system-level innovation targets.",
+            },
+        ];
+
+        function createCard(item, container) {
+            const card = document.createElement('div');
+            card.className = 'card bg-white p-6 rounded-xl shadow-md cursor-pointer';
+            
+            let detailsHtml = item.details ? `<ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">${item.details.map(d => `<li>${d}</li>`).join('')}</ul>` : '';
+
+            card.innerHTML = `
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold text-lg text-teal-700">${item.title}</h3>
+                        ${item.company ? `<p class="font-semibold text-gray-800">${item.company}</p>` : ''}
+                    </div>
+                    ${item.date ? `<span class="text-xs font-medium bg-teal-100 text-teal-800 px-2 py-1 rounded-full">${item.date}</span>` : ''}
+                </div>
+                <p class="text-sm text-gray-500 mt-2">${item.summary}</p>
+                <div class="details-content mt-4">
+                    ${detailsHtml}
+                </div>
+            `;
+            
+            card.addEventListener('click', () => {
+                const content = card.querySelector('.details-content');
+                if (content && item.details) {
+                    content.classList.toggle('show');
+                }
+            });
+
+            container.appendChild(card);
+        }
+
+        const experienceContainer = document.getElementById('experience-container');
+        experienceData.forEach(item => createCard(item, experienceContainer));
+
+        const projectContainer = document.getElementById('projects-container');
+        projectData.forEach(item => createCard(item, projectContainer));
+
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['AI/ML (Modeling, Tuning)', 'Microfluidics & Lab-on-Chip', 'Commercial & Market Strategy', 'Product Development', 'Data Analysis & Research', 'CAD & 3D Printing'],
+                datasets: [{
+                    label: 'Key Skill Areas',
+                    data: [85, 90, 88, 82, 95, 80],
+                    backgroundColor: 'rgba(15, 118, 110, 0.6)',
+                    borderColor: 'rgba(15, 118, 110, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#333',
+                        titleFont: { size: 14 },
+                        bodyFont: { size: 12 },
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        }
+                    },
+                    y: {
+                         grid: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12,
+                                family: 'Inter'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.4
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+        
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            fadeObserver.observe(section);
+        });
+
+    </script>
+</body>
+</html>
