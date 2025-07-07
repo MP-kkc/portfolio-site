@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
+<body class="scroll-smooth scroll-pt-[72px]">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FDFDFB;
+            background-color: #ffffff;
             color: #383838;
         }
         .nav-link {
@@ -32,7 +33,7 @@
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            box-shadow: 0 10px 15px -3px rgba(239, 237, 237, 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
         .details-content {
             display: none;
@@ -71,16 +72,24 @@
 </head>
 <body class="antialiased">
 
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-teal-700">Manasi Parthasarathy</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#summary" class="nav-link font-medium pb-1">Summary</a>
-                <a href="#experience" class="nav-link font-medium pb-1">Experience</a>
-                <a href="#projects" class="nav-link font-medium pb-1">Projects</a>
-                <a href="#research" class="nav-link font-medium pb-1">Research</a>
-                <a href="#education" class="nav-link font-medium pb-1">Education</a>
-            </div>
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto px-6 py-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-teal-700">Manasi Parthasarathy</h1>
+        <p class="text-base md:text-lg text-gray-700 mt-1">Biomedical Innovation | AI Strategy | HealthTech Ventures</p>
+        <div class="mt-4 flex justify-center flex-wrap gap-4 text-sm md:text-base">
+        <a href="#summary" class="nav-link font-medium">About</a>
+        <a href="#experience" class="nav-link font-medium">Experience</a>
+        <a href="#projects" class="nav-link font-medium">Projects</a>
+        
+        <a href="#education" class="nav-link font-medium">Education</a>
+        <a href="#skills" class="nav-link font-medium">Skills</a>
+        
+        <a href="#interests" class="nav-link font-medium">Interests</a>
+        <a href="#contact" class="nav-link font-medium">Connect</a>
+        </div>
+    </nav>
+    </header>
+
             <div class="md:hidden">
                 <button id="menu-btn" class="text-gray-700 focus:outline-none">
                      <span class="text-2xl">&#9776;</span>
@@ -91,16 +100,22 @@
             <a href="#summary" class="block py-2 px-4 text-sm hover:bg-teal-50">Summary</a>
             <a href="#experience" class="block py-2 px-4 text-sm hover:bg-teal-50">Experience</a>
             <a href="#projects" class="block py-2 px-4 text-sm hover:bg-teal-50">Projects</a>
-            <a href="#research" class="block py-2 px-4 text-sm hover:bg-teal-50">Research</a>
+            <a href="#impact" class="block py-2 px-4 text-sm hover:bg-teal-50">Impact</a>
             <a href="#education" class="block py-2 px-4 text-sm hover:bg-teal-50">Education</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-teal-50">skills</a>
+            <a href="#talks" class="block py-2 px-4 text-sm hover:bg-teal-50">Talks</a>
+            <a href="#interests" class="block py-2 px-4 text-sm hover:bg-teal-50">Interests</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-teal-50">Connect</a>
+
+
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
+    <main class="container mx-auto px-6 py-4">
         
-        <section id="summary" class="text-center min-h-[60vh] flex flex-col justify-center items-center section-fade-in">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">Manasi Parthasarathy</h1>
-            <p class="text-xl md:text-2xl text-teal-700 mb-6">Biomedical Innovation, Commercial Strategy, and Health Technology</p>
+        <section id="summary" class="text-center py-10 md:py-14 flex flex-col justify-center items-center section-fade-in scroll-mt-32">
+            <h2 class="text-3xl font-bold mb-4">About Me</h2>
+            <p class="text-lg md:text-xl text-teal-700 mb-6"></p>
             <div class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">
                 <p>
                     A Master of Biomedical Innovation student with a foundation in clinical needs-finding, AI applications in healthcare, and venture creation. Proven ability to translate complex clinical challenges into scalable, technology-driven solutions. Experienced in market strategy, due diligence, and product development for early-stage health-tech ventures.
@@ -115,117 +130,195 @@
             </div>
         </section>
 
-        <section id="experience" class="py-16 section-fade-in">
-            <h2 class="text-3xl font-bold text-center mb-12">Professional Experience</h2>
-             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">This section highlights my hands-on experience in the health-tech industry, spanning commercial strategy, venture analysis, and product development. The interactive cards below detail my key contributions and achievements in each role, demonstrating my ability to drive growth and innovation in early-stage startups. Click on any card to explore the specifics of my impact.</p>
-            <div id="experience-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="experience" class="section-fade-in pt-4 md:pt-8 scroll-mt-32">
+            <h2 class="text-3xl font-bold text-center mb-12">Experience Highlights</h2>
+             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12"><!-- This is a comment just uncomment this if you wanna add the section: This section highlights my hands-on experience in the health-tech industry, spanning commercial strategy, venture analysis, and product development. The interactive cards below detail my key contributions and achievements in each role, demonstrating my ability to drive growth and innovation in early-stage startups. Click on any card to explore the specifics of my impact. --> </p>
+            <div id="experience-container" class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             </div>
         </section>
 
-        <section id="projects" class="py-16 section-fade-in">
-            <h2 class="text-3xl font-bold text-center mb-12">Key Projects & Technical Skills</h2>
-            <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">My project work demonstrates the practical application of my academic knowledge and technical skills. This section features a visual breakdown of my key technical competencies and provides an overview of my most impactful AI and industry-related projects. Explore the chart to see my skill distribution and click the cards to learn about my project-based achievements.</p>
-            <div class="chart-container mb-16">
-                <canvas id="skillsChart"></canvas>
-            </div>
+        <section id="projects" class="py-16 scroll-mt-28 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Key Projects</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">My project work demonstrates the practical application of my academic knowledge and technical skills. This section provides an overview of my most impactful AI and industry-related projects.</p>
             <div id="projects-container" class="grid md:grid-cols-2 gap-8">
             </div>
         </section>
         
-        <section id="research" class="py-16 section-fade-in">
-            <h2 class="text-3xl font-bold text-center mb-12">Thesis Research: AI-Driven Lab-on-a-Chip</h2>
-             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">My thesis research represents a deep dive into the intersection of biomedical engineering, microfluidics, and artificial intelligence. The goal was to significantly enhance the accuracy of cytotoxicity detection for cancer immunotherapy research. The flow diagram below illustrates the comprehensive, multi-stage process I led, from initial design and fabrication to advanced AI-driven data analysis.</p>
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold text-center mb-8">Project Workflow: Advancing Cytotoxicity Detection</h3>
-                <div class="relative">
-                    <div class="border-l-2 border-teal-200 absolute h-full top-0 left-4"></div>
-                    <div class="space-y-12">
-                        <div class="flex items-start">
-                            <div class="bg-teal-500 rounded-full h-8 w-8 text-white flex items-center justify-center font-bold z-10">1</div>
-                            <div class="ml-6">
-                                <h4 class="font-bold text-lg text-teal-700">Design & Fabrication</h4>
-                                <p class="text-gray-600 mt-1">Designed and fabricated 5+ custom 3D-printed microfluidic chips and 2 novel lab-on-chip platforms in Fusion 360 to assess real-time cytotoxic responses of NK immune cells.</p>
-                            </div>
-                        </div>
-                         <div class="flex items-start">
-                            <div class="bg-teal-500 rounded-full h-8 w-8 text-white flex items-center justify-center font-bold z-10">2</div>
-                            <div class="ml-6">
-                                <h4 class="font-bold text-lg text-teal-700">Experimentation</h4>
-                                <p class="text-gray-600 mt-1">Conducted droplet-based microfluidic experiments and NK cell culture assays across 10+ in vitro tumor models, generating over 5,000 images for analysis.</p>
-                            </div>
-                        </div>
-                         <div class="flex items-start">
-                            <div class="bg-teal-500 rounded-full h-8 w-8 text-white flex items-center justify-center font-bold z-10">3</div>
-                            <div class="ml-6">
-                                <h4 class="font-bold text-lg text-teal-700">AI Model Adaptation</h4>
-                                <p class="text-gray-600 mt-1">Adapted and tuned a Detectron2 AI model for automated cytotoxicity event detection, manually labeling 200+ immune-tumor interaction frames to create a high-quality training dataset.</p>
-                            </div>
-                        </div>
-                         <div class="flex items-start">
-                            <div class="bg-teal-500 rounded-full h-8 w-8 text-white flex items-center justify-center font-bold z-10">4</div>
-                            <div class="ml-6">
-                                <h4 class="font-bold text-lg text-teal-700">Data Analysis & Optimization</h4>
-                                <p class="text-gray-600 mt-1">Built clean datasets and improved data quality from 5,000+ images by optimizing preprocessing and augmentation workflows, leading to robust model performance.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section id="impact" class="py-16 scroll-mt-28 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Leadership & Community Impact</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">
+                I care deeply about translating innovation into meaningful real-world impact. These initiatives reflect my commitment to equity-centered strategy, mentorship, and mission-driven problem solving — both inside and beyond the classroom.
+            </p>
+            
+        <div id="impact-container" class="grid md:grid-cols-2 gap-8"></div>
+
         </section>
+
+        <section id="education" class="py-16 scroll-mt-24 section-fade-in">
+             <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
+             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12"> My academic journey has equipped me with the scientific knowledge, design thinking mindset, and innovation training needed to drive health technology forward.</p>
+             
+             <div class="grid md:grid-cols-1 gap-8">
+
+                <div class="bg-white border border-gray-200 p-8 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">Master of Biomedical Innovation (MBI)</h3>
+                    <p class="text-gray-700">McMaster University, Hamilton, ON</p>
+                    <p class="text-sm text-gray-500">Sept 2024 – Aug 2025</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                        <li>Entrance Scholarship Recipient; GPA: 4.0</li>
+                        <li>Training in clinical needs-finding, venture creation, and commercialization.
+                            <a href="https://www.youtube.com/watch?v=XuZaV0fZQpg" target="_blank" class="text-teal-600 underline hover:text-teal-800 ml-1">[Program Video ▶]</a>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border border-gray-200 p-8 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">Honours Bachelor of Science (HBSc)</h3>
+                    <p class="text-gray-700">McMaster University, Hamilton, ON</p>
+                    <p class="text-sm text-gray-500">Sept 2019 – Jun 2024</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                        <li>Major in Biology, Minor in Psychology</li>
+                        <li>Dean’s List • GPA: 3.9/4.0 (2023-2024) • Entrance Scholarship Recipient.</li>
+                    </ul>
+                </div>
         
-        <section id="education" class="py-16 section-fade-in">
-             <h2 class="text-3xl font-bold text-center mb-12">Education & Leadership</h2>
-             <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">This section outlines my academic foundation and leadership experiences, which have cultivated my analytical abilities and collaborative skills. My education provided the theoretical and practical knowledge base, while leadership roles allowed me to apply these skills in real-world team environments.</p>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-bold mb-4">Education</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <p class="font-bold text-lg text-teal-700">Master of Biomedical Innovation (MBI)</p>
-                            <p class="text-gray-700">McMaster University, Hamilton, ON</p>
-                            <p class="text-sm text-gray-500">Sept 2024 - Aug 2025</p>
-                            <ul class="list-disc list-inside mt-2 text-gray-600">
-                                <li>Entrance Scholarship Recipient; GPA: 4.0</li>
-                                <li>Training from clinical needs-finding to venture creation.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="font-bold text-lg text-teal-700">Honors Bachelor of Science (HBSc)</p>
-                            <p class="text-gray-700">McMaster University, Hamilton, ON</p>
-                            <p class="text-sm text-gray-500">Sept 2019 - Jun 2024</p>
-                            <ul class="list-disc list-inside mt-2 text-gray-600">
-                                <li>Major in Biology, Minor in Psychology</li>
-                                <li>Entrance Scholarship; Dean's List; GPA: 3.9</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-bold mb-4">Leadership & Achievements</h3>
-                    <div class="space-y-4 text-gray-600">
-                        <p><span class="font-semibold text-teal-800">Publication:</span> Authored published research on high-fiber diet effects on gut microbiome (URNCST, Feb 2025).</p>
-                        <p><span class="font-semibold text-teal-800">Case Competition:</span> Awarded 2nd Prize for pitching a novel HIV therapeutic business proposal.</p>
-                        <p><span class="font-semibold text-teal-800">Director, Fearless Minds:</span> Expanded mental health initiative to 11,000+ members and supported Sick Kids' Hospital.</p>
-                        <p><span class="font-semibold text-teal-800">Executive, Multipolar Marauder:</span> Led political rights discussions and increased social media engagement.</p>
-                    </div>
-                </div>
             </div>
         </section>
+
+        <section id="skills" class="py-16 scroll-mt-24 section-fade-in">
+        <h2 class="text-3xl font-bold text-center mb-12">Technical & Strategic Skills</h2>
+        <p class="text-center max-w-3xl mx-auto text-gray-600 mb-8">
+            A multidisciplinary toolkit blending strategy, AI fluency, and product innovation.
+        </p>
+
+        <div class="max-w-10xl mx-auto space-y-10">
+            
+            <div>
+            <h3 class="text-xl font-semibold text-rose-700 mb-4">Entrepreneurship & Healthcare Strategy</h3>
+            <div class="flex flex-wrap gap-3 justify-start w-full">
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Go-to-Market Strategy</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Venture Creation</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Clinical Needs-Finding</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Business Model Design</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Regulatory Planning</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium"> Intellectual Property Strategy</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Due Diligence</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Market Sizing</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Competitive & Market Analysis</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Early-Stage Venture Development</span>
+                <span class="px-4 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Commercialization Planning</span>
+            </div>
+            </div>
+
+            <div>
+            <h3 class="text-xl font-semibold text-sky-700 mb-4">AI & Translational Innovation</h3>
+            <div class="flex flex-wrap gap-3 justify-start w-full">
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">Clinical Use Case Framing</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">Translational Feasibility Assessment</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">AI Opportunity Scoping</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">Model Selection & Evaluation</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">Data-Driven Decision Support</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">Data Analysis</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">Data Annotation & Curation</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">AI Usability in Healthcare</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">AI Gap Analysis</span>
+                <span class="px-4 py-2 bg-sky-100 text-sky-800 rounded-full text-sm font-medium">AI Communication</span>
+            </div>
+            </div>
+
+            <div>
+            <h3 class="text-xl font-semibold text-teal-700 mb-4">Tools & Product Development</h3>
+            <div class="flex flex-wrap gap-3 justify-start w-full">
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">Python</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">MATLAB</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">Flask</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">scikit-learn</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">CAD/Fusion 360</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">Firebase</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">3D printing</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium"> UX design</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">Canva</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium"> PyCharm/VS Code</span>
+                <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">HTML/CSS (Basic)</span>
+            </div>
+            </div>
+
+            <div>
+            <h3 class="text-xl font-semibold text-yellow-700 mb-4">Science Communication & Presentation</h3>
+            <div class="flex flex-wrap gap-3 justify-start w-full">
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Strategic Storytelling</span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium"> Visual Slide & Poster Design</span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Stakeholder Communication</span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Cross-Functional Collaboration </span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Mentorship & Peer Coaching</span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Investor-Facing Communications </span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Healthcare Marketing Strategies</span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Sponsorship Outreach</span>
+
+            </div>
+            </div>
+
+            <div>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Additional Certifications</h3>
+            <div class="flex flex-wrap gap-3 justify-start w-full">
+                <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-full text-sm font-medium">Python for Everybody Specialization (UMich)</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-full text-sm font-medium">Health Innovation Bootcamp (The Clinic, McMaster)</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-full text-sm font-medium">GPT Prompt Engineering for Developers (DeepLearning.AI)</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-full text-sm font-medium">Pharmaceutical & Medical Device Innovations (UMinnesota)</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-full text-sm font-medium"> Machine Learning Specialization (Stanford/DeepLearning.AI – In Progress)</span>
+            </div>
+            </div>
+
+        </div>
+        </section>
+
+        <section id="talks" class="py-16 scroll-mt-24 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Invited Talks & Presentations</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">
+                Selected presentations and panels where I’ve shared insights on biomedical innovation, mentorship, and the future of health tech.
+            </p>
+            <div id="talks-container" class="grid md:grid-cols-2 gap-8"></div>
+        </section>
+
+        <section id="interests" class="py-16 scroll-mt-24 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12">Interests & Personal Highlights</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">
+                Beyond work, I'm energized by community, creativity, and the joy of lifelong learning. Here are a few things that keep me inspired.
+            </p>
+            <div id="interests-container" class="grid md:grid-cols-1 gap-8"></div>
+        </section>
+
+        <section id="contact" class="py-16 scroll-mt-24 section-fade-in">
+        <h2 class="text-3xl font-bold text-center mb-4">Connect</h2>
+        <p class="text-center max-w-2xl mx-auto text-gray-600 mb-8">
+            Reach out to collaborate, connect, or talk health innovation. I’m always excited to meet other passionate thinkers building the future of healthcare.
+        </p>
+        <div class="flex justify-center space-x-6 text-2xl text-gray-500">
+            <a href="mailto:manasip.pro@gmail.com" class="hover:text-teal-600 transition-colors">✉️</a>
+            <a href="https://www.linkedin.com/in/manasiparthasarathy" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">
+            <span class="font-bold">in</span>
+            </a>
+            <a href="tel:+1-647-879-0805" class="hover:text-teal-600 transition-colors">📞</a>
+        </div>
+        </section>
+
     </main>
 
-    <footer class="bg-gray-100 mt-16">
+    <footer class="bg-gray-100 mt-5">
         <div class="container mx-auto px-6 py-8 text-center text-gray-600">
             <p>&copy; 2025 Manasi Parthasarathy. All Rights Reserved.</p>
             <p class="text-sm mt-2">Interactive resume created to showcase skills and experience.</p>
         </div>
     </footer>
 
+
     <script>
         const experienceData = [
             {
                 title: "Commercialization & Strategy Intern",
                 company: "Digital Medical Experts",
-                date: "Feb 2025 - Present",
+
                 summary: "Venture-backed AI Neurotech Diagnostics",
                 details: [
                     "Spearheaded market sizing (TAM/SAM/SOM) and opportunity analysis, identifying 5+ high-priority segments.",
@@ -237,7 +330,7 @@
             {
                 title: "Venture Fellow",
                 company: "Halo Health",
-                date: "Feb 2025 - Present",
+                
                 summary: "Angel Investment Group",
                 details: [
                     "Conducted due diligence on 10+ early-stage healthtech startups.",
@@ -249,8 +342,8 @@
             {
                 title: "Product Strategy & Prototyping Intern",
                 company: "Morphace",
-                date: "March 2025 - Present",
-                summary: "AI-powered skincare wearables",
+                
+                summary: "AI-powered Skincare Wearables",
                 details: [
                     "Identified 5+ new customer segments and market opportunities, including a high-impact women's health segment.",
                     "Contributed to product design and AI opportunity assessment across 3+ feature areas.",
@@ -261,8 +354,8 @@
             {
                 title: "Commercial Strategy Consultant",
                 company: "Razroze Therapeutics",
-                date: "Jan 2025 - April 2025",
-                summary: "AI personalized mental health support",
+                
+                summary: "AI personalized Mental Health Support",
                 details: [
                     "Co-developed a commercialization plan for an AI chatbot, leveraging insights from 2,000+ users.",
                     "Outlined 3+ strategic milestones across product, ethical AI deployment, and commercialization readiness.",
@@ -272,34 +365,146 @@
             {
                 title: "Market Research Specialist",
                 company: "Llettonna",
-                date: "Feb 2019 - Aug 2020",
-                summary: "Centralized health database",
+                
+                summary: "Maternal Healthtech Startup",
                 details: [
                     "Conducted detailed market research and MARS-based assessments on 20+ eHealth apps.",
                     "Applied PESTLE and SWOT analyses to evaluate market positioning and competitive landscape.",
                     "Translated 10+ market reports into insights that shaped strategic planning."
                 ]
             },
+            {
+                title: "Research and Development Intern",
+                company: "Ongiza",
+                
+                summary: "Healthtech for Centralized Wellness Booking Services",
+                details: [
+                    "Contributed to the design and organization of a centralized provider database to improve access to licensed wellness professionals across Ontario.",
+                    "Managed and edited digital health content; produced 5+ outreach videos to support community engagement and awareness.",
+                    "Supported data collection, quality control, and cross-functional collaboration to inform product development and ensure content accuracy."
+                ]
+            },
         ];
 
         const projectData = [
             {
-                title: "AI Project: Generative AI for Needs Finding",
-                summary: "Conducted comprehensive analysis of leading generative AI models for problem exploration in biomedical innovation.",
+                title: "Thesis: AI-Powered Cytotoxicity Detection",
+                summary: "Designed 2+ novel lab-on-chip systems and adapted an AI model (Detectron2) to detect cytotoxicity events in NK–tumor cell interactions, improving experimental efficiency for immunotherapy research."
             },
-            {
-                title: "AI Project: Neural Network Tuning",
-                summary: "Designed and trained a classification model in TensorFlow Playground, experimenting with hyperparameters and applying regularization.",
-            },
-            {
+                        {
                 title: "Industry Project: Remote Heart Failure Monitoring",
                 summary: "Led early-stage development of an impedance-based remote heart failure monitoring solution, translating clinical observations into product concept.",
             },
             {
-                title: "Industry Project: Endometriosis Misdiagnosis Analysis",
-                summary: "Assessed global burden of endometriosis misdiagnosis, identifying 8+ unmet needs and proposing 5+ system-level innovation targets.",
+                title: "Smart Referral & Triage Platform",
+                summary: "Built a Flask-based referral platform with urgency scoring, reassignment workflows, and clinic-matching logic; informed by needs-finding interviews with 15+ stakeholders."
+            },
+            {
+                title: "AI for Sleep Apnea Detection – T-CAIREM Datathon",
+                summary: "Analyzed polysomnography (EEG) data using CNNs and DBSCAN to classify apnea severity. Presented to Google, Sunnybrook, and T-CAIREM stakeholders."
+            },
+            {
+                title: "IP Strategy for Robotic Plaque Assay",
+                summary: "Conducted CPC-based patent search and FTO assessment. Designed a dual-layer IP protection strategy for defensibility."
+            },
+            {
+                title: "AI Project: Generative AI for Needs Finding",
+                summary: "Conducted comprehensive analysis of leading generative AI models for problem exploration in biomedical innovation (GPT, Gemini, DeepSeek, SluiceAI).",
+            },
+            {
+                title: "AI Project: Neural Network Tuning",
+                summary: "Explored neural network behavior using TensorFlow Playground, tuning hyperparameters and applying regularization to improve classification performance.",
+            },
+            {
+                title: "AI for Drug Discovery – D-MPNN Review",
+                summary: "Critically evaluated a deep learning pipeline for antibiotic discovery. Proposed optimizations and assessed ethical/regulatory implications."
+            },
+            {
+                title: "Explainable AI for Retinoblastoma",
+                summary: "Evaluated an explainable AI pipeline (InceptionV3 + LIME/SHAP) for pediatric diagnosis use case. Identified venture opportunities and system-level improvements."
+            },
+            {
+                title: "2024 HealthTech Trends – Venture Analysis",
+                summary: "Mapped venture insights from Bessemer's predictions to market trends. Translated into implications for founders and investors."
+            }
+        ];
+
+        const impactData = [
+            {
+                title: "Social Impact Strategist",
+                role: "541 Eatery & Exchange",
+                summary: "Designed a dignity-centered impact strategy and led a mixed-method evaluation for a nonprofit café serving an underserved community."
+            },
+            {
+                title: "MBI Ambassador",
+                role: "Master of Biomedical Innovation",
+                summary: "Mentored peers, supported incoming innovators, and led program promotion and continuous improvement efforts."
+            },
+            {
+                title: "Sponsorship Director (2026) & Logistics Lead (2025)",
+                role: "BioTec Conference",
+                summary: "Led logistics for the 2025 event (250+ attendees); now directing 2026 sponsorship to expand MedTech partnerships and funding."
+            },
+            {
+                title: "Director of Research and Chapter Operations",
+                role: "Fearless Minds ",
+                summary: "Scaled a university mental health initiative to 11,000+ members; led outreach, partnerships (SickKids), and peer mentorship across campuses."
+            },
+            {
+                title: "URNCST Journal",
+                role: "First Author",
+                summary: "Published research protocol on the effects of a high-fiber diet on gut microbiome and insulin sensitivity in prediabetes."
+            },
+            {
+                title: "National Case Competitions",
+                role: "Finalist & Presenter",
+                summary: "Pitched novel therapeutic and regenerative solutions—HIV antibodies/aptamers and stem cell microgels for heart failure—earning national recognition across two competitions."
             },
         ];
+
+        const talksData = [
+            {
+                title: "Speaker, U of T Biology Careers Panel",
+                summary: "Shared personal career journey to inspire students exploring paths beyond biology; offered guidance and mentorship to undergraduates navigating post-grad decisions."
+            },
+            {
+                title: "MBI Panel, McMaster",
+                summary: "Shared practical insights on navigating the Biomedical Innovation program and breaking into the health-tech space; actively mentoring multiple incoming students on career strategy and academic success."
+            },
+            {
+                title: "Ontario Biology Day (Poster)",
+                summary: "Presented and discussed research findings with peers and faculty at one of Ontario’s largest undergraduate biology conferences."
+            },
+            {
+                title: "Biomedical Innovation Showcase (Poster & Pitch)",
+                summary: "Represented Digital Medical Experts (DME); pitched commercialization strategy for AI neurodiagnostics to clinicians and industry stakeholders."
+            }
+        ];
+
+        const interestData = [
+            {
+                title: "🎨 Artistic Endeavors",
+                summary: "Taught painting to youth and helped open a community art studio — blending creativity with community-building."
+            },
+            {
+                title: "📘 Educational Contributions",
+                summary: "Tutored high school students in STEM, supporting their academic growth and confidence in challenging subjects."
+            },
+            {
+                title: "🌎 Cultural Engagement",
+                summary: "Active member of Mississauga’s South Asian women’s book club, fostering dialogue, representation, and joy through literature."
+            },
+            {
+                title: "🤝🏼 Professional Curiosity",
+                summary: "Regularly attend biotech and venture events to stay inspired, learn from the best, and grow my innovation network."
+
+            },
+            {
+                title: "🐶 Life Outside the Startup World",
+                summary: "I wind down through painting, good books, and long walks with Faith — my goldendoodle and the best part of my day. Whether it's sketching a new idea or catching up with friends over a novel, I believe creativity fuels clarity."
+            }
+        ];
+
 
         function createCard(item, container) {
             const card = document.createElement('div');
@@ -311,7 +516,7 @@
                 <div class="flex justify-between items-start">
                     <div>
                         <h3 class="font-bold text-lg text-teal-700">${item.title}</h3>
-                        ${item.company ? `<p class="font-semibold text-gray-800">${item.company}</p>` : ''}
+                        ${item.company || item.role ? `<p class="font-semibold text-gray-800">${item.company || item.role}</p>` : ''}
                     </div>
                     ${item.date ? `<span class="text-xs font-medium bg-teal-100 text-teal-800 px-2 py-1 rounded-full">${item.date}</span>` : ''}
                 </div>
@@ -331,64 +536,34 @@
             container.appendChild(card);
         }
 
+        function createInterestCard(data) {
+        const div = document.createElement("div");
+        div.className = "card bg-white border border-gray-200 p-6 rounded-xl shadow-sm";
+        div.innerHTML = `
+            <h3 class="text-lg font-bold text-teal-700">${data.title}</h3>
+            <p class="mt-2 text-gray-700">${data.summary}</p>
+        `;
+        return div;
+        }
+
+
         const experienceContainer = document.getElementById('experience-container');
         experienceData.forEach(item => createCard(item, experienceContainer));
 
         const projectContainer = document.getElementById('projects-container');
         projectData.forEach(item => createCard(item, projectContainer));
 
-        const ctx = document.getElementById('skillsChart').getContext('2d');
-        const skillsChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['AI/ML (Modeling, Tuning)', 'Microfluidics & Lab-on-Chip', 'Commercial & Market Strategy', 'Product Development', 'Data Analysis & Research', 'CAD & 3D Printing'],
-                datasets: [{
-                    label: 'Key Skill Areas',
-                    data: [85, 90, 88, 82, 95, 80],
-                    backgroundColor: 'rgba(15, 118, 110, 0.6)',
-                    borderColor: 'rgba(15, 118, 110, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: true,
-                        backgroundColor: '#333',
-                        titleFont: { size: 14 },
-                        bodyFont: { size: 12 },
-                    }
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            display: false
-                        }
-                    },
-                    y: {
-                         grid: {
-                            display: false
-                        },
-                        ticks: {
-                            font: {
-                                size: 12,
-                                family: 'Inter'
-                            }
-                        }
-                    }
-                }
-            }
-        });
+        const impactContainer = document.getElementById('impact-container');
+        impactData.forEach(item => createCard(item, impactContainer));
+
+        const talksContainer = document.getElementById('talks-container');
+        talksData.forEach(item => createCard(item, talksContainer));
+
+        const interestsContainer = document.getElementById('interests-container');
+        interestData.forEach(item => interestsContainer.appendChild(createInterestCard(item)));
+
+
+
 
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -440,6 +615,9 @@
             fadeObserver.observe(section);
         });
 
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+
+ 
     </script>
 </body>
 </html>
